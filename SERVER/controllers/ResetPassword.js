@@ -50,6 +50,7 @@ exports.resetPassword = async (req, res) => {
 	try {
 		const { password, confirmPassword, token } = req.body;
 
+<<<<<<< HEAD
 		if (confirmPassword !== password) {
 			return res.json({
 				success: false,
@@ -87,3 +88,25 @@ exports.resetPassword = async (req, res) => {
 		});
 	}
 };
+=======
+        //password update
+        await User.findOneAndUpdate(
+            {token:token},
+            {password:hashedPassword},
+            {new:true},
+        );
+        //return response
+        return res.status(200).json({
+            success:true,
+            message:'Password reset successful',
+        });
+    }
+    catch(error) {
+        console.log(error);
+        return res.status(500).json({
+            success:false,
+            message:'Something went wrong while sending reset pwd mail'
+        })
+    }
+}
+>>>>>>> ea168bcc040e68e1260ea6544ab2c5c4fdacdd21
