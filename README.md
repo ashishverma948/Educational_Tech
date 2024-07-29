@@ -1,6 +1,6 @@
-# Study Notion
+# Educational Tech
 
-Study Notion is an ED Tech (Education Technology) web application developed using the MERN stack.
+Educational Tech is an ED Tech (Education Technology) web application developed using the MERN stack.
 
 ## Note
 
